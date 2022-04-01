@@ -26,14 +26,24 @@ const text2 = "0";
 const isFalse = [];
 const isTrue = [];
 
+(!!num1 == true) ? (isTrue.push (num1)) : (isFalse.push (num1));
+(!!boolean1 == true) ? (isTrue.push (boolean1)) : (isFalse.push (boolean1));
+(!!num2 == true) ? (isTrue.push (num2)) : (isFalse.push (num2));
+(!!emptyString == true) ? (isTrue.push (emptyString)) : (isFalse.push (emptyString));
+(!!boolean2 == true) ? (isTrue.push (boolean2)) : (isFalse.push (boolean2));
+(!!text == true) ? (isTrue.push (text)) : (isFalse.push (text));
+(!!text2 == true) ? (isTrue.push (text2)) : (isFalse.push (text2));
+
+console.log ("false: ",isFalse);
+console.log ("true: :",isTrue);
 //
 
 
 // შეცვალეთ ერთი ასო რომ მიიღოთ ჭეშმარიტი დებულება
 // მოკლედ ახსენით მუშაობის პრინციპი თუ რატომ იმოქმედა
 
-console.log("abc" > "ah")
-console.log(2 === "004")
+console.log("abc" < "ah")
+console.log(2 !== "004")
 
 
 
@@ -44,6 +54,11 @@ console.log(2 === "004")
 
 // >>> კოდი დაწერეთ აქ 
 
+let mainAge = 18;
+let userAge = Number(prompt("enter your age"))
+
+if (userAge == mainAge || userAge > mainAge)
+  console.log('სასმელს ხომ არ დალევთ?')
 
 //
 
@@ -52,6 +67,26 @@ console.log(2 === "004")
 
 // >>> კოდი დაწერეთ აქ
 
+ mainAge = 18;
+ userAge = Number(prompt("enter your age"))
+
+if(mainAge == userAge){
+  console.log  ('სასმელს ხომ არ დალევთ?')
+
+}else if (userAge < mainAge){
+  console.log ('უპს ჯერ პატარა ხარ, სასმელს ვერ შემოგთავაზებ') 
+
+}else if (userAge > 100){
+  console.log ('დალევის თავი არ გექნებათ თორემ სასმელს შემოგთავაზებდით')
+
+}else if (userAge > 60){
+  console.log ('ჯანმრთელობა თუ არ გიშლით ხელს, სასმელს შემოგთავაზებთ')
+
+
+}else if (userAge > mainAge){
+  console.log ('ჰა დალევ ხო? ;-)')
+}
+
 //
 
 
@@ -59,9 +94,12 @@ console.log(2 === "004")
 
 // >>> კოდი დაწერეთ აქ
 
+let a =  Number (prompt ('enter first number'));
+let b =  Number (prompt ('enter second number'));
+ 
+console.log( a < b ? ("a<b") : a = b ? ("a=b") : ("a>b"));
+  
 //
-
-
 
 /*
   ჩვენ გვაქვს ოთხი ფერი რომელთაც აქვთ
@@ -81,6 +119,25 @@ let colorId = 3
 // >>> კოდი დაწერეთ აქ
 
 
+let useColorId = Number(prompt("enter color id"));
+
+if (useColorId==3){
+   console.log ('Red')
+
+}else if (useColorId < 3 && useColorId > 1){
+  console.log ('Green')
+
+}else if (useColorId < 2 && useColorId > 0){
+  console.log ('Blue')
+
+}else if (useColorId < 1 ){
+  console.log ('Black')
+
+}else if (useColorId > 3 && useColorId < 5 ){
+  console.log ('White')
+}
+else console.log ("underfined");
+
 //
 
 
@@ -89,6 +146,16 @@ let colorId = 3
 
 // >>> კოდი დაწერეთ აქ
 
+ useColorId = Number(prompt("enter color id"));
+
+ a = "undefined"
+a = useColorId == 0 ? (a="black") : a;
+a = useColorId == 1 ? (a="blue") : a;
+a = useColorId == 2 ? (a="green") : a;
+a = useColorId == 3 ? (a="red") : a;
+a = useColorId == 4 ? (a="white") : a;
+
+console.log(a);
 
 //
 
@@ -101,6 +168,32 @@ let colorId = 3
 
 // >>> კოდი დაწერეთ აქ
 
+ colorId = Number(prompt("enter color id"))
+switch(colorId){
+  case 0:
+    console.log("black")
+    break;
+
+  case 1:
+    console.log("blue")
+    break;
+
+  case 2:
+    console.log("green")
+    break;
+
+  case 3:
+    console.log("red")
+    break;
+
+  case 4:
+    console.log("white")
+    break;
+
+  default: 
+    console.log("undefined");
+    break;
+}
 
 //
 
@@ -139,9 +232,36 @@ function myFun() {
 
   // >>> კოდი დაწერეთ აქ გამოიყენეთ Switch
 
+let hello = prompt("გამარჯობათ");
+    switch (hello){
+      case 'გამარჯობათ':
+        let a = prompt ('როგორ ხართ?');
 
+        switch (a) {
+          case 'კარგად':
+            alert ('ძალიან კარგი');
+            break;
+
+          case 'ცუდად':
+            alert ('სამწუხაროა');
+            break;
+
+        }
+       a = prompt ('გაქვთ თუ არა მართვის მოწმობა?');
+        switch (a) {
+          case 'არა':
+            alert ('სამწუხაროდ დაგაჯარიმებთ 2000 ლარით');
+            break;
+
+          case 'კი':
+            alert ('არ დაგაჯარიმებთ ოღონდ იარეთ ბრთხილად')
+            break;
+          }
+        break;
+    }
   //
 
   // რეკურსიული ფუნქცია
   myFun()
 }
+
