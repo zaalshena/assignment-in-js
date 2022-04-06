@@ -134,5 +134,3 @@ function banki (a,b){
 let a = prompt ('შეიყვანე თანხა');
 let b = prompt ('შეიყვანე თვეების რაოდენობა');
 alert (banki (a, b ));
-
-//////
