@@ -12,7 +12,27 @@
 
 ////// =>> კოდი დაწერეთ აქ
 
+let arr = [];
 
+    arr.push(prompt('ჩაწერე პირველი რიცხვი'));
+    arr.push(prompt('ჩაწერე მეორე რიცხვი'));
+    arr.push(prompt('ჩაწერე მესამე რიცხვი'));
+    arr.push(prompt('ჩაწერე მეოთხე რიცხვი'));
+    arr.push(prompt('ჩაწერე მეხუთე რიცხვი'));
+    let simbol = (prompt ('ჩაწერე +, -, * რომელიმე სიმბოლო'));
+    alert (arr[0]+simbol+arr[1]+simbol+arr[2]+simbol+arr[3]+simbol+arr[4]);
+    
+    alert(func(arr,simbol));
+    function func (par1, par2){
+        switch (par2){
+            case '+': 
+            return parseInt(par1[0])+parseInt(par1[1])+parseInt(par1[2])+parseInt(par1[3])+parseInt(par1[4]);
+            case '-': 
+            return parseInt(par1[0])-parseInt(par1[1])-parseInt(par1[2])-parseInt(par1[3])-parseInt(par1[4]);
+            case '*': 
+            return parseInt(par1[0])*parseInt(par1[1])*parseInt(par1[2])*parseInt(par1[3])*parseInt(par1[4]);
+        }
+    }
 
 //////
 
@@ -30,7 +50,18 @@ const Arr2 = [23, 3, 123, 34, 43, 4, 41]
 
 ////// =>> კოდი დაწერეთ აქ
 
+alert (collide(Arr1, Arr2));
 
+function collide (par1, par2){
+    const Arr3 = [];
+    for (let i=0; i<6; i++){
+        for (let j=0; j<7; j++){
+            if (par1 [i] == par2[j])
+              Arr3.push (par1[i]);
+        }
+    }
+    return Arr3;
+}
 
 //////
 
@@ -45,7 +76,14 @@ const Arr2 = [23, 3, 123, 34, 43, 4, 41]
 
 ////// =>> კოდი დაწერეთ აქ
 
-
+function timer(a){
+    console.log(a)
+    a++
+    if( a > 0 && a < 11){
+        setTimeout(() => timer(a),1000)
+    }
+}
+ timer(1) 
 
 //////
 
@@ -60,7 +98,16 @@ const Arr2 = [23, 3, 123, 34, 43, 4, 41]
 
 ////// =>> კოდი დაწერეთ აქ
 
-
+const Arr= [2, 4, 9, 1, 14, 93, 123, 9, 14, 14, 23];
+    function max (par1){
+        let max = (par1[0]);
+        for (let i=0; i<par1.length; i++ ){
+            if (par1[i]>max)
+            max=par1[i];
+        } 
+        return max;
+    }
+    alert (max(Arr));
 
 //////
 
@@ -76,6 +123,16 @@ const Arr2 = [23, 3, 123, 34, 43, 4, 41]
 
 ////// =>> კოდი დაწერეთ აქ
 
-
+function banki (a,b){
+    if (b<=6)
+    return (a*1.1).toFixed(2);
+    else if (b<=12)
+    return (a*1.14).toFixed(2);
+    else 
+    return (a*1.2).toFixed(2);
+}
+let a = prompt ('შეიყვანე თანხა');
+let b = prompt ('შეიყვანე თვეების რაოდენობა');
+alert (banki (a, b ));
 
 //////
